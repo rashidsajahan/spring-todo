@@ -2,6 +2,9 @@ package com.rashid.helloword;
 
 import com.rashid.helloword.models.Todo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,6 +27,11 @@ public class TodoService {
 
     public List<Todo> getTodos() {
         return todoRepository.findAll();
+    }
+
+    public Page<Todo> getAllTodoPages(int page, int size){
+        Pageable pageable = PageRequest.of(page, size);
+        return todoRepository.findAll(pageable);
     }
 
     public Todo updateTodo(Todo todo) {

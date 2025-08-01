@@ -2,6 +2,7 @@ package com.rashid.helloword;
 
 import com.rashid.helloword.models.Todo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -36,6 +37,10 @@ public class TodoController {
         return  new ResponseEntity<List<Todo>>(todoService.getTodos(), HttpStatus.OK);
     }
 
+    @GetMapping("/page")
+    ResponseEntity<Page<Todo>> getTodosPaged(@RequestParam int page, @RequestParam int size){
+        return  new ResponseEntity<Page<Todo>>(todoService.getAllTodoPages(page, size), HttpStatus.OK);
+    }
 
     //Request param
 //    @GetMapping
