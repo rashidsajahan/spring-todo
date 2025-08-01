@@ -1,5 +1,6 @@
 package com.rashid.helloword.models;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -24,6 +25,7 @@ public class Todo {
 //    @NotBlank
 //    String description;
     @NotBlank(message = "Title is required")
+    @Schema(name = "title", example = "Complete spring boot")
     private String title;
 
     @NotBlank(message = "Description is required")

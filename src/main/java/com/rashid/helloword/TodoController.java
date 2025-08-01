@@ -1,6 +1,8 @@
 package com.rashid.helloword;
 
 import com.rashid.helloword.models.Todo;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +25,10 @@ public class TodoController {
 //        return "Todo";
 //    }
 
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Todo Retrieved Successfully."),
+            @ApiResponse(responseCode = "400", description = "Todo was not found.")
+    })
 
     //Path variable
     @GetMapping("/{id}")
