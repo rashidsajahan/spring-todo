@@ -5,10 +5,14 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import lombok.Data;
+import lombok.*;
 
 @Entity
-@Data
+@Data //Both getter and setter and constructor
+//@Getter
+//@Setter
+//@AllArgsConstructor // constructor
+//@NoArgsConstructor
 public class Todo {
     @Id
     @GeneratedValue
