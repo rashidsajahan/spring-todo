@@ -2,6 +2,7 @@ package com.rashid.helloword;
 
 import com.rashid.helloword.models.Todo;
 import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
@@ -12,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/todo")
+@Slf4j
 public class TodoController {
     @Autowired
     private TodoService todoService;
@@ -29,6 +31,9 @@ public class TodoController {
             Todo getTodoById = todoService.getTodoById(id);
             return new ResponseEntity<>(getTodoById, HttpStatus.OK);
         } catch (RuntimeException e) {
+            log.info("Error"); //info, warn, error
+            log.warn("Error");
+            log.error("Error", e);
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
     }
