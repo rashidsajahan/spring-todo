@@ -1,6 +1,7 @@
 package com.rashid.helloword;
 
 import com.rashid.helloword.models.Todo;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
@@ -50,10 +51,11 @@ public class TodoController {
 
     //Request body
     @PostMapping("/create")
-    ResponseEntity<Todo> createTodo(@RequestBody Todo todo) {
+    ResponseEntity<Todo> createTodo(@RequestBody @Valid Todo todo) {
         Todo createTodo = todoService.createTodo(todo);
         return new ResponseEntity<>(createTodo, HttpStatus.CREATED);
     }
+
 
     //Path variable
     @PutMapping
