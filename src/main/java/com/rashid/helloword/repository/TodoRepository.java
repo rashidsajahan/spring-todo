@@ -1,9 +1,7 @@
-package com.rashid.helloword;
+package com.rashid.helloword.repository;
 
 import com.rashid.helloword.models.Todo;
-import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Component;
 
 //@Bean
 //@Component

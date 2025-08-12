@@ -1,6 +1,7 @@
-package com.rashid.helloword;
+package com.rashid.helloword.controller;
 
 import com.rashid.helloword.models.Todo;
+import com.rashid.helloword.service.TodoService;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;

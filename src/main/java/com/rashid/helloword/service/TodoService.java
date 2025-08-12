@@ -1,6 +1,7 @@
-package com.rashid.helloword;
+package com.rashid.helloword.service;
 
 import com.rashid.helloword.models.Todo;
+import com.rashid.helloword.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
